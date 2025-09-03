@@ -6,7 +6,7 @@
     <title>JKC LEGAL ASSOCIATE | Legal Services in Barasat, Barrackpore & Bidhannagar</title>
     <meta name="description" content="Expert legal services in Barasat, Barrackpore & Bidhannagar. Get professional legal assistance with family, property, criminal, and civil matters.">
     <meta name="keywords" content="advocate, lawyer, legal services, Barasat court, Barrackpore court, Bidhannagar court, Kolkata lawyer, belgharia advocate, nimta lawyer, barasat advocate, best advocate in belgharia">
-    <meta name="author" content="Advocate Jayanta">
+    <meta name="author" content="Adeeb Rabbani">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -116,7 +116,6 @@
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #0d2d5e 100%);
             color: var(--white);
             padding: 100px 0 80px;
             position: relative;
@@ -124,10 +123,47 @@
             margin-top: -80px; /* Counteract body padding */
         }
         
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .scrolling-hero-images {
+            display: flex;
+            width: 400%; /* 4 images */
+            height: 100%;
+            animation: scrollHero 20s infinite;
+        }
+        
+        .scrolling-hero-images img {
+            width: 25%; /* Each image takes 25% of the container */
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @keyframes scrollHero {
+            0% { transform: translateX(0); }
+            5% { transform: translateX(0); }
+            25% { transform: translateX(-25%); }
+            30% { transform: translateX(-25%); }
+            50% { transform: translateX(-50%); }
+            55% { transform: translateX(-50%); }
+            75% { transform: translateX(-75%); }
+            80% { transform: translateX(-75%); }
+            100% { transform: translateX(-75%); }
+        }
+        
         .header-container {
             display: flex;
             align-items: center;
             gap: 40px;
+            position: relative;
+            z-index: 2;
         }
         
         .header-content {
@@ -135,37 +171,6 @@
             max-width: 650px;
             position: relative;
             z-index: 2;
-        }
-        
-        .header-images {
-            flex: 1;
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .scrolling-images {
-            display: flex;
-            flex-direction: column;
-            animation: scroll 30s linear infinite;
-        }
-        
-        .scrolling-images:hover {
-            animation-play-state: paused;
-        }
-        
-        .scrolling-images img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100%); }
         }
         
         /* Navigation */
@@ -230,6 +235,7 @@
             animation: blink 2s infinite;
             text-decoration: none;
             font-size: 0.9rem;
+            white-space: nowrap;
         }
         
         .emergency-call:hover {
@@ -252,18 +258,21 @@
         .hero h1 {
             color: var(--white);
             margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .hero h2 {
             color: var(--white);
             margin-bottom: 1rem;
             text-align: left;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2.5rem;
             max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
         .hero-buttons {
@@ -593,10 +602,18 @@
             min-width: 280px;
         }
         
+        .contact-right {
+            text-align: right;
+        }
+        
         .contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 25px;
+        }
+        
+        .contact-right .contact-item {
+            justify-content: flex-end;
         }
         
         .contact-icon {
@@ -610,6 +627,16 @@
             justify-content: center;
             margin-right: 15px;
             flex-shrink: 0;
+        }
+        
+        .contact-right .contact-icon {
+            margin-right: 0;
+            margin-left: 15px;
+            order: 2;
+        }
+        
+        .contact-right .contact-item > div {
+            text-align: right;
         }
         
         .map-container {
@@ -682,6 +709,24 @@
             h2 {
                 font-size: 1.8rem;
             }
+            
+            .contact-right {
+                text-align: left;
+            }
+            
+            .contact-right .contact-item {
+                justify-content: flex-start;
+            }
+            
+            .contact-right .contact-icon {
+                margin-left: 0;
+                margin-right: 15px;
+                order: 0;
+            }
+            
+            .contact-right .contact-item > div {
+                text-align: left;
+            }
         }
     
         /* Booking Section */
@@ -753,16 +798,19 @@
             z-index: 2000;
             align-items: center;
             justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
         }
         
         .modal-content {
             background-color: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 8px;
-            width: 90%;
+            width: 100%;
             max-width: 500px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.2);
             position: relative;
+            margin: auto;
         }
         
         .close-modal {
@@ -772,6 +820,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--dark-gray);
+            z-index: 2001;
         }
         
         .form-group {
@@ -800,6 +849,13 @@
             resize: vertical;
         }
         
+        .word-count {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: right;
+            margin-top: 5px;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark-gray);
@@ -819,27 +875,6 @@
         @media (max-width: 992px) {
             .header-container {
                 flex-direction: column;
-            }
-            
-            .header-images {
-                width: 100%;
-                margin-top: 40px;
-            }
-            
-            .scrolling-images {
-                flex-direction: row;
-                animation: scrollHorizontal 30s linear infinite;
-            }
-            
-            .scrolling-images img {
-                width: 300px;
-                height: 300px;
-                margin-right: 20px;
-            }
-            
-            @keyframes scrollHorizontal {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
             }
             
             .about-container {
@@ -917,11 +952,6 @@
                 justify-content: center;
             }
             
-            .scrolling-images img {
-                width: 250px;
-                height: 250px;
-            }
-            
             .testimonial-nav {
                 width: 40px;
                 height: 40px;
@@ -930,6 +960,31 @@
             .service-card {
                 flex: 1 1 100%;
                 max-width: 100%;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .modal-content {
+                padding: 20px 15px;
+            }
+            
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 10px;
             }
         }
     </style>
@@ -966,6 +1021,16 @@
 
     <!-- Header / Hero Section -->
     <header id="home" class="hero">
+        <!-- Hero background with scrolling images -->
+        <div class="hero-background">
+            <div class="scrolling-hero-images">
+                <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/74205824_2528621700585479_3765713993830760448_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pmmirms1bPoQ7kNvwH6ewWF&_nc_oc=AdlAwCXKxtFlw28zDhm1fCWFzplPBAoGoxYiV6NjcDH5JGO3YvyqD-BZbbrpnjTIsTM&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=3lU6e46dVPFTkYL0EmPNOg&oh=00_AfVbx-wtQ3rml0_NSGhG5L68tR2kYFJZqF9TzM3KyhmwOw&oe=68DEC90F" alt="Legal representation in Barasat Court">
+                <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/48393065_2005817266199261_8526418846100226048_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=O89mTLZpDdYQ7kNvwGt1JIF&_nc_oc=AdmlepBNN47sXB1g9Ba12DTpdpJRMqDeLdi5rTwf7lUgcnoaKygv9YssVLILcCXTLjE&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=aVebH5ie3oKZacE4RbSlcg&oh=00_AfUF61mM8lTKgM0ypBoBb0CQCICZ2g7kRDQlmm98z0Vgyw&oe=68DED57E" alt="Courtroom victory with Advocate Jayanta">
+                <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t39.30808-6/512788187_23999248989762773_7542156817413169452_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Xu_nX_8HxTsQ7kNvwEnIHvf&_nc_oc=AdnDPsnoyLxW8C-OK38gl2p8xpym9UVtustaF0JlGqfHnfWlNGwEfIMHJyhi5AGUsXQ&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=TG36HmQGzh1sFhsI1WVJWg&oh=00_AfXerj8xnJOt0wuzj2x8ZB7-n2w3Zydovq1Fst77-2gRaw&oe=68BD1073" alt="Client success story with Advocate Jayanta">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Calcutta_highcourt.jpg" alt="Calcutta High Court">
+            </div>
+        </div>
+        
         <div class="container header-container">
             <div class="header-content">
                 <h1>JCK Legal Firm</h1>
@@ -976,16 +1041,6 @@
                     <a href="tel:+918697333934" class="btn btn-outline">
                          For Emergency Cases: Call Now  <i class="fas fa-phone-alt"></i>
                     </a>
-                </div>
-            </div>
-            
-            <div class="header-images">
-                <div class="scrolling-images">
-                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/74205824_2528621700585479_3765713993830760448_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pmmirms1bPoQ7kNvwH6ewWF&_nc_oc=AdlAwCXKxtFlw28zDhm1fCWFzplPBAoGoxYiV6NjcDH5JGO3YvyqD-BZbbrpnjTIsTM&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=3lU6e46dVPFTkYL0EmPNOg&oh=00_AfVbx-wtQ3rml0_NSGhG5L68tR2kYFJZqF9TzM3KyhmwOw&oe=68DEC90F" alt="Legal representation in Barasat Court">
-                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/48393065_2005817266199261_8526418846100226048_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=O89mTLZpDdYQ7kNvwGt1JIF&_nc_oc=AdmlepBNN47sXB1g9Ba12DTpdpJRMqDeLdi5rTwf7lUgcnoaKygv9YssVLILcCXTLjE&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=aVebH5ie3oKZacE4RbSlcg&oh=00_AfUF61mM8lTKgM0ypBoBb0CQCICZ2g7kRDQlmm98z0Vgyw&oe=68DED57E" alt="Courtroom victory with Advocate Jayanta">
-                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t39.30808-6/512788187_23999248989762773_7542156817413169452_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Xu_nX_8HxTsQ7kNvwEnIHvf&_nc_oc=AdnDPsnoyLxW8C-OK38gl2p8xpym9UVtustaF0JlGqfHnfWlNGwEfIMHJyhi5AGUsXQ&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=TG36HmQGzh1sFhsI1WVJWg&oh=00_AfXerj8xnJOt0wuzj2x8ZB7-n2w3Zydovq1Fst77-2gRaw&oe=68BD1073" alt="Client success story with Advocate Jayanta">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE0YjhjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I=" alt="Legal services in Kolkata">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSI gaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZjMTA3Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1iZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU=" alt="Court victory with expert lawyer">
                 </div>
             </div>
         </div>
@@ -1444,8 +1499,9 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="message">Brief Description of Your Matter</label>
-                    <textarea id="message" name="message"></textarea>
+                    <label for="message">Brief Description of Your Matter (max 200 words)</label>
+                    <textarea id="message" name="message" maxlength="1000"></textarea>
+                    <div class="word-count" id="wordCount">0/200 words</div>
                 </div>
                 
                 <button type="submit" class="btn">Submit Appointment Request</button>
@@ -1507,16 +1563,19 @@
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
             });
         });
         
         closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         });
         
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
         });
         
@@ -1546,7 +1605,9 @@
             
             // Close modal and reset form
             modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
             appointmentForm.reset();
+            document.getElementById('wordCount').textContent = '0/200 words';
         });
         
         // Testimonial slider functionality
@@ -1639,6 +1700,29 @@
             } else {
                 timeSelect.innerHTML = '<option value="">No available slots</option>';
                 timeSelect.disabled = true;
+            }
+        });
+        
+        // Word count functionality for message textarea
+        const messageTextarea = document.getElementById('message');
+        const wordCountElement = document.getElementById('wordCount');
+        
+        messageTextarea.addEventListener('input', function() {
+            const text = this.value;
+            const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            
+            // Update word count display
+            wordCountElement.textContent = `${wordCount}/200 words`;
+            
+            // Enforce word limit
+            if (wordCount > 200) {
+                const words = text.trim().split(/\s+/);
+                const limitedWords = words.slice(0, 200);
+                this.value = limitedWords.join(' ');
+                wordCountElement.textContent = '200/200 words (limit reached)';
+                wordCountElement.style.color = 'red';
+            } else {
+                wordCountElement.style.color = '#666';
             }
         });
     </script>
