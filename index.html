@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advocate Jayanta | Legal Services in Barasat, Barrackpore & Bidhannagar</title>
+    <meta name="description" content="Expert legal services in Barasat, Barrackpore & Bidhannagar. Get professional legal assistance with family, property, criminal, and civil matters.">
+    <meta name="keywords" content="advocate, lawyer, legal services, Barasat court, Barrackpore court, Bidhannagar court, Kolkata lawyer">
+    <meta name="author" content="Advocate Jayanta">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles and Reset */
@@ -336,6 +339,91 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light-blue);
+            padding: 80px 0;
+        }
+        
+        .testimonials-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .testimonials-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial {
+            min-width: 100%;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+        
+        .testimonial-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-rating {
+            color: var(--accent-yellow);
+        }
+        
+        .testimonial-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .testimonial-nav:hover {
+            background: #0d2d5e;
+        }
+        
+        .testimonial-prev {
+            left: -20px;
+        }
+        
+        .testimonial-next {
+            right: -20px;
+        }
+        
         /* Contact Section */
         .contact {
             display: flex;
@@ -533,6 +621,18 @@
                 0% { transform: translateX(0); }
                 100% { transform: translateX(-50%); }
             }
+            
+            .testimonial-nav {
+                position: static;
+                transform: none;
+                margin: 20px auto;
+                display: inline-block;
+            }
+            
+            .testimonial-prev, .testimonial-next {
+                position: static;
+                margin: 0 10px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -589,7 +689,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="https://photos.google.com/photo/AF1QipPOVCDtHimC1Lnld9_ozvO12ZUwB1MfD6nvDB8C" alt="Advocate Jayanta Logo">
+                <img src="https://photos.google.com/photo/AF1QipPOVCDtHimC1Lnld9_ozvO12ZUwB1MfD6nvDB8C" alt="Advocate Jayanta Logo - Legal Services in Barasat, Barrackpore & Bidhannagar">
             </a>
             
             <ul class="nav-menu">
@@ -597,8 +697,10 @@
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#process" class="nav-link">Process</a></li>
                 <li class="nav-item"><a href="#courts" class="nav-link">Courts</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
             </ul>
             
             <div class="hamburger">
@@ -612,23 +714,22 @@
         <div class="container header-container">
             <div class="header-content">
                 <h1>Get your matter moving and your peace of mind back</h1>
-                <p>You'll be heard, not judged. We'll explain your options in simple words and keep you updated over call or Whatsapp, while your case moves in Barasat Judge Court, Barrackpore Sub Divisional Court, Bidhan Nagar Court and surrounding courts also.</p>
+                <p>You'll be heard, not judged. We'll explain your options in simple words and keep you updated over call or Whatsapp, while your case moves in Barasat Judge Court, Barrackpore Sub Divisional Court, Bidhan Nagar Court and surrounding courts also.</p>
                 <a href="#" class="btn book-btn">Book Your Chamber Appointment</a>
             </div>
             
             <div class="header-images">
                 <div class="scrolling-images">
-                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/74205824_2528621700585479_3765713993830760448_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pmmirms1bPoQ7kNvwH6ewWF&_nc_oc=AdlAwCXKxtFlw28zDhm1fCWFzplPBAoGoxYiV6NjcDH5JGO3YvyqD-BZbbrpnjTIsTM&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=3lU6e46dVPFTkYL0EmPNOg&oh=00_AfVbx-wtQ3rml0_NSGhG5L68tR2kYFJZqF9TzM3KyhmwOw&oe=68DEC90F" alt="Legal Course Image">
-                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/48393065_2005817266199261_8526418846100226048_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=O89mTLZpDdYQ7kNvwGt1JIF&_nc_oc=AdmlepBNN47sXB1g9Ba12DTpdpJRMqDeLdi5rTwf7lUgcnoaKygv9YssVLILcCXTLjE&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=aVebH5ie3oKZacE4RbSlcg&oh=00_AfUF61mM8lTKgM0ypBoBb0CQCICZ2g7kRDQlmm98z0Vgyw&oe=68DED57E" alt="Court Victory Image">
-                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t39.30808-6/512788187_23999248989762773_7542156817413169452_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Xu_nX_8HxTsQ7kNvwEnIHvf&_nc_oc=AdnDPsnoyLxW8C-OK38gl2p8xpym9UVtustaF0JlGqfHnfWlNGwEfIMHJyhi5AGUsXQ&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=TG36HmQGzh1sFhsI1WVJWg&oh=00_AfXerj8xnJOt0wuzj2x8ZB7-n2w3Zydovq1Fst77-2gRaw&oe=68BD1073" alt="Client Success Image">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE0YjhjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+TGVnYWwgQ291cnNlPC90ZXh0Pjwvc3ZnPg==" alt="Legal Course Image">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZjMTA3Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1iZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+Q291cnQgVmljdG9yeTwvdGV4dD48L3N2Zz4=" alt="Court Victory Image">
+                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/74205824_2528621700585479_3765713993830760448_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pmmirms1bPoQ7kNvwH6ewWF&_nc_oc=AdlAwCXKxtFlw28zDhm1fCWFzplPBAoGoxYiV6NjcDH5JGO3YvyqD-BZbbrpnjTIsTM&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=3lU6e46dVPFTkYL0EmPNOg&oh=00_AfVbx-wtQ3rml0_NSGhG5L68tR2kYFJZqF9TzM3KyhmwOw&oe=68DEC90F" alt="Legal representation in Barasat Court">
+                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/48393065_2005817266199261_8526418846100226048_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=O89mTLZpDdYQ7kNvwGt1JIF&_nc_oc=AdmlepBNN47sXB1g9Ba12DTpdpJRMqDeLdi5rTwf7lUgcnoaKygv9YssVLILcCXTLjE&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=aVebH5ie3oKZacE4RbSlcg&oh=00_AfUF61mM8lTKgM0ypBoBb0CQCICZ2g7kRDQlmm98z0Vgyw&oe=68DED57E" alt="Courtroom victory with Advocate Jayanta">
+                    <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t39.30808-6/512788187_23999248989762773_7542156817413169452_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Xu_nX_8HxTsQ7kNvwEnIHvf&_nc_oc=AdnDPsnoyLxW8C-OK38gl2p8xpym9UVtustaF0JlGqfHnfWlNGwEfIMHJyhi5AGUsXQ&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=TG36HmQGzh1sFhsI1WVJWg&oh=00_AfXerj8xnJOt0wuzj2x8ZB7-n2w3Zydovq1Fst77-2gRaw&oe=68BD1073" alt="Client success story with Advocate Jayanta">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE0YjhjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I=" alt="Legal services in Kolkata">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSI gaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZjMTA3Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1iZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+Q291cnQgVmljdG9yeTwvdGV4dD48L3N2Zz4=" alt="Court victory with expert lawyer">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Rest of the page content remains the same as before -->
     <!-- Problem Section -->
     <section id="services" class="problem">
         <div class="container">
@@ -705,6 +806,138 @@
                 <div class="court-item">Barrackpore Sub Divisional Court</div>
                 <div class="court-item">Bidhan Nagar Court</div>
                 <div class="court-item">Calcutta High Court (when needed)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonials-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Advocate Jayanta handled my property dispute with utmost professionalism. He explained every step clearly and kept me updated throughout the process. I couldn't have asked for better representation."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Rahul Sharma</h4>
+                                <p>Barasat, Kolkata</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"I was facing a complicated family matter and was very stressed. Advocate Jayanta not only provided excellent legal counsel but also showed genuine care and understanding. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Priya Singh</h4>
+                                <p>Barrackpore, Kolkata</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The transparency in billing and regular updates via WhatsApp made my legal journey smooth. Advocate Jayanta is knowledgeable and accessible - a rare combination these days."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Amitesh Chatterjee</h4>
+                                <p>Bidhannagar, Kolkata</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"I had almost lost hope in my case after multiple delays. Advocate Jayanta took charge, explained the process in simple terms, and secured a favorable outcome. Thank you for your dedication!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Sanjay Mitra</h4>
+                                <p>Madhyamgram, Kolkata</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"From the first consultation to case resolution, I felt heard and supported. The regular WhatsApp updates were especially helpful for someone like me who can't always visit in person."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Neha Gupta</h4>
+                                <p>New Barrackpore, Kolkata</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav testimonial-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="testimonial-nav testimonial-next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -878,14 +1111,7 @@
                 <div class="form-group">
                     <label for="time">Preferred Time</label>
                     <select id="time" name="time" required>
-                        <option value="">Select a time</option>
-                        <option value="07:30 PM">07:30 PM</option>
-                        <option value="08:00 PM">08:00 PM</option>
-                        <option value="08:30 PM">08:30 PM</option>
-                        <option value="09:00 PM">09:00 PM</option>
-                        <option value="09:30 PM">09:30 PM</option>
-                        <option value="10:00 PM">10:00 PM</option>
-                        <option value="10:30 PM">10:30 PM</option>
+                        <option value="">Select a date first</option>
                     </select>
                 </div>
                 
@@ -993,6 +1219,83 @@
             // Close modal and reset form
             modal.style.display = 'none';
             appointmentForm.reset();
+        });
+        
+        // Testimonial slider functionality
+        const testimonialSlider = document.querySelector('.testimonials-slider');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const prevBtn = document.querySelector('.testimonial-prev');
+        const nextBtn = document.querySelector('.testimonial-next');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonialSlider.style.transform = `translateX(-${index * 100}%)`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 7000);
+        
+        // Date selection for appointment booking
+        const dateInput = document.getElementById('date');
+        const timeSelect = document.getElementById('time');
+        
+        dateInput.addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            const dayOfWeek = selectedDate.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            
+            // Clear previous options
+            timeSelect.innerHTML = '';
+            
+            if (dayOfWeek === 0) { // Sunday
+                // Add Sunday time slots (11 AM to 2 PM in 30-minute intervals)
+                for (let hour = 11; hour < 14; hour++) {
+                    for (let minute = 0; minute < 60; minute += 30) {
+                        const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                        const displayTime = `${hour}:${minute === 0 ? '00' : '30'} ${hour >= 12 ? 'PM' : 'AM'}`;
+                        const option = document.createElement('option');
+                        option.value = timeString;
+                        option.textContent = displayTime;
+                        timeSelect.appendChild(option);
+                    }
+                }
+            } else {
+                // Add weekday time slots (7:30 PM to 10:30 PM in 30-minute intervals)
+                for (let hour = 19; hour < 23; hour++) {
+                    for (let minute = 30; minute < 60; minute += 30) {
+                        if (hour === 22 && minute === 30) break; // Stop at 10:30 PM
+                        
+                        const displayHour = hour > 12 ? hour - 12 : hour;
+                        const period = hour >= 12 ? 'PM' : 'AM';
+                        const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                        const displayTime = `${displayHour}:${minute === 0 ? '00' : '30'} ${period}`;
+                        
+                        const option = document.createElement('option');
+                        option.value = timeString;
+                        option.textContent = displayTime;
+                        timeSelect.appendChild(option);
+                    }
+                }
+            }
+            
+            if (timeSelect.options.length > 0) {
+                timeSelect.disabled = false;
+            } else {
+                timeSelect.innerHTML = '<option value="">No available slots</option>';
+                timeSelect.disabled = true;
+            }
         });
     </script>
 </body>
