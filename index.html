@@ -187,7 +187,7 @@
         }
         
         .logo {
-            height: 50px;
+            height: 60px; /* Increased logo size */
             display: flex;
             align-items: center;
         }
@@ -204,7 +204,7 @@
         }
         
         .nav-item {
-            margin-left: 30px;
+            margin-left: 25px;
             position: relative;
         }
         
@@ -224,11 +224,12 @@
             align-items: center;
             background-color: #ff4d4d;
             color: white;
-            padding: 8px 15px;
+            padding: 6px 12px;
             border-radius: 4px;
             font-weight: 600;
             animation: blink 2s infinite;
             text-decoration: none;
+            font-size: 0.9rem;
         }
         
         .emergency-call:hover {
@@ -302,17 +303,17 @@
         .services-cards {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
             justify-content: center;
         }
         
         .service-card {
             background: var(--white);
             border-radius: 8px;
-            padding: 30px;
+            padding: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            flex: 1 1 300px;
-            max-width: 350px;
+            flex: 1 1 220px; /* Adjusted for smaller cards */
+            max-width: 280px; /* Reduced max width */
             transition: transform 0.3s ease;
         }
         
@@ -321,9 +322,17 @@
         }
         
         .service-icon {
-            font-size: 2.5rem;
+            font-size: 2rem; /* Slightly smaller icon */
             color: var(--primary-blue);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem; /* Smaller heading */
+        }
+        
+        .service-card p {
+            font-size: 0.95rem; /* Smaller text */
         }
         
         /* How It Works Section */
@@ -335,7 +344,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 20px;
+            gap: 30px;
             margin: 50px 0;
         }
         
@@ -345,18 +354,72 @@
             max-width: 300px;
         }
         
+        .step-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .step-number {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
             background-color: var(--accent-yellow);
             color: var(--dark-gray);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
+        }
+        
+        /* Courts Section */
+        .courts {
+            background-color: var(--light-gray);
+            padding: 40px 0;
+        }
+        
+        .court-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .court-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+        
+        .court-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .court-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .court-info {
+            padding: 20px;
+            text-align: center;
         }
         
         /* Trust Section */
@@ -383,27 +446,6 @@
             font-size: 2rem;
             color: var(--primary-blue);
             margin-bottom: 15px;
-        }
-        
-        /* Courts Section */
-        .courts {
-            background-color: var(--light-gray);
-            padding: 40px 0;
-        }
-        
-        .court-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .court-item {
-            background-color: var(--white);
-            padding: 15px 25px;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         /* Testimonials Section */
@@ -686,6 +728,13 @@
         }
         
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .service-card {
+                flex: 1 1 200px;
+                max-width: 240px;
+            }
+        }
+        
         @media (max-width: 992px) {
             .header-container {
                 flex-direction: column;
@@ -715,6 +764,11 @@
             .about-container {
                 flex-direction: column;
                 text-align: center;
+            }
+            
+            .service-card {
+                flex: 1 1 280px;
+                max-width: 350px;
             }
             
             .testimonial-nav {
@@ -791,6 +845,11 @@
                 width: 40px;
                 height: 40px;
             }
+            
+            .service-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -799,7 +858,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="https://i.ibb.co/Swp5yWcW/Chat-GPT-Image-Sep-3-2025-12-45-40-AM.png" alt="Advocate Jayanta Logo - Legal Services in Barasat, Barrackpore & Bidhannagar">
+                <img src="https://photos.google.com/photo/AF1QipPOVCDtHimC1Lnld9_ozvO12ZUwB1MfD6nvDB8C" alt="Advocate Jayanta Logo - Legal Services in Barasat, Barrackpore & Bidhannagar">
             </a>
             
             <ul class="nav-menu">
@@ -808,13 +867,12 @@
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#process" class="nav-link">Process</a></li>
                 <li class="nav-item"><a href="#courts" class="nav-link">Courts</a></li>
-                <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item">
                     <a href="tel:+918697333934" class="emergency-call">
-                        <i class="fas fa-phone-alt"></i>&nbsp; Emergency Cases: Call Now
+                        <i class="fas fa-phone-alt"></i>&nbsp; Emergency cases?
                     </a>
                 </li>
             </ul>
@@ -829,12 +887,12 @@
     <header id="home" class="hero">
         <div class="container header-container">
             <div class="header-content">
-                <h1>Get your peace of mind back</h1>
-                <p>You'll be heard, not judged. We'll explain your options in simple words and keep you updated regularly. Legal counsel for individuals and businesses in matters of property disputes, family law, and criminal defense.</p>
+                <h1>Get your matter moving and your peace of mind back</h1>
+                <p>You'll be heard, not judged. We'll explain your options in simple words and keep you updated over call or Whatsapp, while your case moves in Barasat Judge Court, Barrackpore Sub Divisional Court, Bidhan Nagar Court and surrounding courts also.</p>
                 <div class="hero-buttons">
                     <a href="#" class="btn book-btn">Book Your Chamber Appointment</a>
                     <a href="tel:+918697333934" class="btn btn-outline">
-                        <i class="fas fa-phone-alt"></i> For Emergency Cases: Call Now
+                        <i class="fas fa-phone-alt"></i> For Emergency Cases
                     </a>
                 </div>
             </div>
@@ -845,7 +903,7 @@
                     <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/48393065_2005817266199261_8526418846100226048_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=O89mTLZpDdYQ7kNvwGt1JIF&_nc_oc=AdmlepBNN47sXB1g9Ba12DTpdpJRMqDeLdi5rTwf7lUgcnoaKygv9YssVLILcCXTLjE&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=aVebH5ie3oKZacE4RbSlcg&oh=00_AfUF61mM8lTKgM0ypBoBb0CQCICZ2g7kRDQlmm98z0Vgyw&oe=68DED57E" alt="Courtroom victory with Advocate Jayanta">
                     <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t39.30808-6/512788187_23999248989762773_7542156817413169452_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Xu_nX_8HxTsQ7kNvwEnIHvf&_nc_oc=AdnDPsnoyLxW8C-OK38gl2p8xpym9UVtustaF0JlGqfHnfWlNGwEfIMHJyhi5AGUsXQ&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=TG36HmQGzh1sFhsI1WVJWg&oh=00_AfXerj8xnJOt0wuzj2x8ZB7-n2w3Zydovq1Fst77-2gRaw&oe=68BD1073" alt="Client success story with Advocate Jayanta">
                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE0YjhjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I=" alt="Legal services in Kolkata">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSI gaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZjMTA3Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1iZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+Q291cnQgVmljdG9yeTwvdGV4dD48L3N2Zz4=" alt="Court victory with expert lawyer">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSI gaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZjMTA3Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1iZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU=" alt="Court victory with expert lawyer">
                 </div>
             </div>
         </div>
@@ -907,18 +965,27 @@
             
             <div class="steps">
                 <div class="step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Book appointment">
+                    </div>
                     <div class="step-number">1</div>
                     <h3>Book your chamber slot</h3>
                     <p>Schedule through our website or WhatsApp at your convenience.</p>
                 </div>
                 
                 <div class="step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Meet in person">
+                    </div>
                     <div class="step-number">2</div>
                     <h3>Meet in person</h3>
                     <p>Share your story and get next steps explained in plain language.</p>
                 </div>
                 
                 <div class="step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1563013545-4e3b2a9143ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Receive updates">
+                    </div>
                     <div class="step-number">3</div>
                     <h3>Receive updates</h3>
                     <p>Get regular WhatsApp updates while we move your matter forward.</p>
@@ -931,11 +998,43 @@
     <section id="courts" class="courts">
         <div class="container">
             <h2>Courts We Serve</h2>
-            <div class="court-list">
-                <div class="court-item">Barasat Judge Court</div>
-                <div class="court-item">Barrackpore Sub Divisional Court</div>
-                <div class="court-item">Bidhan Nagar Court</div>
-                <div class="court-item">Calcutta High Court (when needed)</div>
+            <div class="court-cards">
+                <div class="court-card">
+                    <div class="court-image">
+                        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80" alt="Barasat Judge Court">
+                    </div>
+                    <div class="court-info">
+                        <h3>Barasat Judge Court</h3>
+                    </div>
+                </div>
+                
+                <div class="court-card">
+                    <div class="court-image">
+                        <img src="https://images.unsplash.com/photo-1605087880595-8cc5dbccfba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80" alt="Barrackpore Sub Divisional Court">
+                    </div>
+                    <div class="court-info">
+                        <h3>Barrackpore Sub Divisional Court</h3>
+                    </div>
+                </div>
+                
+                <div class="court-card">
+                    <div class="court-image">
+                        <img src="https://images.unsplash.com/photo-1590086782957-93c06ef2c5ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80" alt="Bidhan Nagar Court">
+                    </div>
+                    <div class="court-info">
+                        <h3>Bidhan Nagar Court</h3>
+                    </div>
+                </div>
+                
+                <div class="court-card">
+                    <div class="court-image">
+                        <img src="https://images.unsplash.com/photo-1590086783030-9d4f463ceb57?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80" alt="Calcutta High Court">
+                    </div>
+                    <div class="court-info">
+                        <h3>Calcutta High Court</h3>
+                        <p>(when needed)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
