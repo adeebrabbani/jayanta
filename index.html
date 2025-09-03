@@ -8,6 +8,8 @@
     <meta name="keywords" content="advocate, lawyer, legal services, Barasat court, Barrackpore court, Bidhannagar court, Kolkata lawyer">
     <meta name="author" content="Advocate Jayanta">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Base Styles and Reset */
         * {
@@ -35,6 +37,13 @@
             padding-top: 80px; /* Space for fixed header */
         }
         
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
@@ -44,12 +53,6 @@
         
         section {
             padding: 80px 0;
-        }
-        
-        h1, h2, h3, h4 {
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            line-height: 1.3;
         }
         
         h1 {
@@ -94,6 +97,17 @@
         
         .btn:hover {
             background-color: var(--dark-yellow);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-yellow);
+            color: var(--accent-yellow);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-yellow);
+            color: var(--dark-gray);
         }
         
         .text-center {
@@ -186,10 +200,12 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         .nav-item {
             margin-left: 30px;
+            position: relative;
         }
         
         .nav-link {
@@ -201,6 +217,29 @@
         
         .nav-link:hover {
             color: var(--primary-blue);
+        }
+        
+        .emergency-call {
+            display: flex;
+            align-items: center;
+            background-color: #ff4d4d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            animation: blink 2s infinite;
+            text-decoration: none;
+        }
+        
+        .emergency-call:hover {
+            background-color: #ff3333;
+            color: white;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
         }
         
         .hamburger {
@@ -220,26 +259,54 @@
             max-width: 600px;
         }
         
-        /* Problem Section */
-        .problem {
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        /* Services Section */
+        .services {
             background-color: var(--light-gray);
         }
         
-        .problem-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Solution Section */
-        .solution-cards {
+        .services-cards {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
             justify-content: center;
-            margin-top: 40px;
         }
         
-        .card {
+        .service-card {
             background: var(--white);
             border-radius: 8px;
             padding: 30px;
@@ -249,17 +316,17 @@
             transition: transform 0.3s ease;
         }
         
-        .card:hover {
+        .service-card:hover {
             transform: translateY(-5px);
         }
         
-        .card-icon {
+        .service-icon {
             font-size: 2.5rem;
             color: var(--primary-blue);
             margin-bottom: 20px;
         }
         
-        /* How It Works */
+        /* How It Works Section */
         .how-it-works {
             background-color: var(--light-blue);
         }
@@ -318,7 +385,7 @@
             margin-bottom: 15px;
         }
         
-        /* Courts */
+        /* Courts Section */
         .courts {
             background-color: var(--light-gray);
             padding: 40px 0;
@@ -402,26 +469,49 @@
             transform: translateY(-50%);
             background: var(--primary-blue);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         
         .testimonial-nav:hover {
             background: #0d2d5e;
+            transform: translateY(-50%) scale(1.1);
         }
         
         .testimonial-prev {
-            left: -20px;
+            left: -25px;
         }
         
         .testimonial-next {
-            right: -20px;
+            right: -25px;
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--primary-blue);
         }
         
         /* Contact Section */
@@ -622,16 +712,21 @@
                 100% { transform: translateX(-50%); }
             }
             
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
             .testimonial-nav {
                 position: static;
                 transform: none;
-                margin: 20px auto;
+                margin: 20px 10px;
                 display: inline-block;
             }
             
             .testimonial-prev, .testimonial-next {
                 position: static;
-                margin: 0 10px;
+                display: inline-block;
             }
         }
         
@@ -650,6 +745,10 @@
             
             .header-content {
                 text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
             }
             
             .hamburger {
@@ -677,9 +776,20 @@
                 text-align: center;
             }
             
+            .emergency-call {
+                margin: 15px auto;
+                width: 80%;
+                justify-content: center;
+            }
+            
             .scrolling-images img {
                 width: 250px;
                 height: 250px;
+            }
+            
+            .testimonial-nav {
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -694,6 +804,7 @@
             
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#process" class="nav-link">Process</a></li>
                 <li class="nav-item"><a href="#courts" class="nav-link">Courts</a></li>
@@ -701,6 +812,11 @@
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item">
+                    <a href="tel:+918697333934" class="emergency-call">
+                        <i class="fas fa-phone-alt"></i>&nbsp; Emergency Cases: Call Now
+                    </a>
+                </li>
             </ul>
             
             <div class="hamburger">
@@ -715,7 +831,12 @@
             <div class="header-content">
                 <h1>Get your matter moving and your peace of mind back</h1>
                 <p>You'll be heard, not judged. We'll explain your options in simple words and keep you updated over call or Whatsapp, while your case moves in Barasat Judge Court, Barrackpore Sub Divisional Court, Bidhan Nagar Court and surrounding courts also.</p>
-                <a href="#" class="btn book-btn">Book Your Chamber Appointment</a>
+                <div class="hero-buttons">
+                    <a href="#" class="btn book-btn">Book Your Chamber Appointment</a>
+                    <a href="tel:+918697333934" class="btn btn-outline">
+                        <i class="fas fa-phone-alt"></i> For Emergency Cases: Call Now
+                    </a>
+                </div>
             </div>
             
             <div class="header-images">
@@ -730,40 +851,49 @@
         </div>
     </header>
 
-    <!-- Problem Section -->
-    <section id="services" class="problem">
-        <div class="container">
-            <h2>When the system feels slow and confusing, it wears you down.</h2>
-            <div class="problem-content">
-                <p>Endless dates. Confusing paperwork. Different stories from different people. You're saying, "I just want peace of mind" and "please, no hidden charges."</p>
-                <p>It's hard to trust the process when no one explains what's happening or why. You need someone local who knows the courts and keeps you in the loop.</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.6435-9/74205824_2528621700585479_3765713993830760448_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pmmirms1bPoQ7kNvwH6ewWF&_nc_oc=AdlAwCXKxtFlw28zDhm1fCWFzplPBAoGoxYiV6NjcDH5JGO3YvyqD-BZbbrpnjTIsTM&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=3lU6e46dVPFTkYL0EmPNOg&oh=00_AfVbx-wtQ3rml0_NSGhG5L68tR2kYFJZqF9TzM3KyhmwOw&oe=68DEC90F" alt="Advocate Jayanta">
+            </div>
+            <div class="about-content">
+                <h2>About Advocate Jayanta</h2>
+                <p>For over 10 years, I have been dedicated to helping individuals and businesses navigate complex legal challenges in Belgharia, Nimta, Birati, Barrackpore & Barasat. My approach is centered on providing clear, strategic, and effective representation to protect your interests.</p>
+                <p>I understand that legal matters can be stressful and overwhelming. That's why I prioritize clear communication, keeping you informed at every step, and providing practical solutions tailored to your specific situation.</p>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="solution">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <h2>Clarity, updates, and progress—so you can breathe again.</h2>
-            <p class="text-center">If you're tired of dates getting postponed, feeling lost in legal jargon, and chasing for updates, you're not alone. You want this to end, not drag on—so you can get back to life.</p>
+            <h2>Our Legal Services</h2>
+            <p class="text-center">Comprehensive legal solutions tailored to your specific needs and circumstances.</p>
             
-            <div class="solution-cards">
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-ear-listen"></i></div>
-                    <h3>Feel heard and understood</h3>
-                    <p>In-chamber, face-to-face time—so you're not rushed. "I need a lawyer who actually listens, not judges" becomes your lived experience.</p>
+            <div class="services-cards">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Civil Cases</h3>
+                    <p>Expert representation in property disputes, contract disagreements, and other civil litigation matters. We help protect your rights and interests through strategic legal approaches.</p>
                 </div>
                 
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-comment-dots"></i></div>
-                    <h3>Always know what's next</h3>
-                    <p>Immediate WhatsApp responses and regular updates, so you never have to chase. We explain options in simple words and confirm next dates in writing.</p>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Criminal Cases</h3>
+                    <p>Strong defense representation for various criminal charges. We ensure your rights are protected throughout the legal process while working toward the best possible outcome.</p>
                 </div>
                 
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h3>No bill shock—ever</h3>
-                    <p>First consult is paid. You get a written estimate, no hidden charges, and negotiable packages for wills, agreements, deeds and more.</p>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Family Cases</h3>
+                    <p>Compassionate handling of sensitive family matters including divorce, custody, and maintenance cases. We provide guidance during difficult times with empathy and expertise.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Writs & Deeds</h3>
+                    <p>Professional preparation and review of legal documents including wills, agreements, and property deeds. Ensure your documents are legally sound and properly executed.</p>
                 </div>
             </div>
         </div>
@@ -937,6 +1067,14 @@
                 </div>
                 <div class="testimonial-nav testimonial-next">
                     <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <div class="testimonial-dots">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
+                    <div class="testimonial-dot" data-index="3"></div>
+                    <div class="testimonial-dot" data-index="4"></div>
                 </div>
             </div>
         </div>
@@ -1226,26 +1364,40 @@
         const testimonials = document.querySelectorAll('.testimonial');
         const prevBtn = document.querySelector('.testimonial-prev');
         const nextBtn = document.querySelector('.testimonial-next');
+        const dots = document.querySelectorAll('.testimonial-dot');
         let currentTestimonial = 0;
         
         function showTestimonial(index) {
             testimonialSlider.style.transform = `translateX(-${index * 100}%)`;
+            currentTestimonial = index;
+            
+            // Update active dot
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
         }
         
         nextBtn.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
+            const nextIndex = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextIndex);
         });
         
         prevBtn.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-            showTestimonial(currentTestimonial);
+            const prevIndex = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(prevIndex);
+        });
+        
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+            });
         });
         
         // Auto-advance testimonials
         setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
+            const nextIndex = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextIndex);
         }, 7000);
         
         // Date selection for appointment booking
@@ -1260,17 +1412,19 @@
             timeSelect.innerHTML = '';
             
             if (dayOfWeek === 0) { // Sunday
-                // Add Sunday time slots (11 AM to 2 PM in 30-minute intervals)
-                for (let hour = 11; hour < 14; hour++) {
-                    for (let minute = 0; minute < 60; minute += 30) {
-                        const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
-                        const displayTime = `${hour}:${minute === 0 ? '00' : '30'} ${hour >= 12 ? 'PM' : 'AM'}`;
-                        const option = document.createElement('option');
-                        option.value = timeString;
-                        option.textContent = displayTime;
-                        timeSelect.appendChild(option);
-                    }
-                }
+                // Add Sunday time slots (11 AM, 12 PM, 1 PM)
+                const sundayTimes = [
+                    {value: '11:00', display: '11:00 AM'},
+                    {value: '12:00', display: '12:00 PM'},
+                    {value: '13:00', display: '1:00 PM'}
+                ];
+                
+                sundayTimes.forEach(time => {
+                    const option = document.createElement('option');
+                    option.value = time.value;
+                    option.textContent = time.display;
+                    timeSelect.appendChild(option);
+                });
             } else {
                 // Add weekday time slots (7:30 PM to 10:30 PM in 30-minute intervals)
                 for (let hour = 19; hour < 23; hour++) {
